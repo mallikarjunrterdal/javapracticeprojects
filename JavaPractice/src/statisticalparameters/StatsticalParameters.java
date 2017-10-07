@@ -18,14 +18,21 @@ public class StatsticalParameters {
 	}
 
 	public void displayStasticalParameters(List<Integer> listOfNumbers) {
-		System.out.println("Mean of given class distribution is   : " + this.getMean(listOfNumbers));
-		System.out.println("Median of given class distribution is : " + this.getMedian(this.sort(listOfNumbers)));
+		if (listOfNumbers.size() != 0) {
+			System.out.println("Mean of given class distribution is   : " + this.getMean(listOfNumbers));
+			System.out.println("Median of given class distribution is : " + this.getMedian(this.sort(listOfNumbers)));
 
-		List<Integer> mode = this.getMode(this.sort(listOfNumbers));
-		if (mode != null) {
-			System.out.println("Mode of given class distribution is   : " + mode);
+			List<Integer> mode = this.getMode(this.sort(listOfNumbers));
+			if (mode != null) {
+				System.out.println("Mode of given class distribution is   : " + mode);
+			} else {
+				System.out.println("Mode for the given class distribution does not exist");
+			}
+
+			System.out.println(
+					"Standard Deviation of given class distribution is : " + this.getStandardDeviation(listOfNumbers));
 		} else {
-			System.out.println("Mode for the given class distribution does not exist");
+			System.out.println("Please enter the class distribution to get the stastical parameters");
 		}
 	}
 
@@ -141,5 +148,27 @@ public class StatsticalParameters {
 			if (!number.matches("^\\d+$"))
 				return false;
 		return true;
+	}
+
+	public int getStandardDeviation(List<Integer> listOfNumbers) {
+		int difference = 0;
+		int sumOfDifferenceSquared = 0;
+		int mean = this.getMean(listOfNumbers);
+
+		for (int number : listOfNumbers) {
+			difference = number - mean;
+			sumOfDifferenceSquared += difference * difference;
+		}
+		return this.getMaximumSquareRoot((sumOfDifferenceSquared / listOfNumbers.size()));
+	}
+
+	public int getMaximumSquareRoot(int integerNumber) {
+		if (integerNumber == 1 || integerNumber == 2)
+			return integerNumber;
+		for (int i = 2;;)
+			if (((i + 1) * (i + 1)) > integerNumber)
+				return i;
+			else
+				i++;
 	}
 }

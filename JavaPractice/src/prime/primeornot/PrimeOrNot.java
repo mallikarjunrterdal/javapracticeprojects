@@ -26,7 +26,7 @@ public class PrimeOrNot {
 		try {
 			do {
 				System.out.println("Please enter a number to check if it is prime or not :");
-				String inputNumber = this.readLine();
+				String inputNumber = bufferedReader.readLine();
 				if (this.isGivenNumberValid(inputNumber)) {
 					if (this.isGivenNumberPrime(Integer.parseInt(inputNumber))) {
 						System.out.println(inputNumber + " is prime number");
@@ -38,7 +38,7 @@ public class PrimeOrNot {
 					continue;
 				}
 				System.out.println("Do you wish to continue(y/n)?:");
-				choice = this.readLine();
+				choice = bufferedReader.readLine();
 			} while (choice.equals("y") || choice.equals("Y"));
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -53,15 +53,6 @@ public class PrimeOrNot {
 				ioe.printStackTrace();
 			}
 		}
-	}
-
-	/*
-	 * Gets the input from STDIN. Returns the input characters from STDIN
-	 */
-	public String readLine() throws IOException {
-		String input = "";
-		input = bufferedReader.readLine();
-		return input;
 	}
 
 	/*

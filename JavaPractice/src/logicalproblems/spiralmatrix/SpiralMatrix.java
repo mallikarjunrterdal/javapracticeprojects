@@ -19,37 +19,31 @@ public class SpiralMatrix {
 
 		for (int i = 1; i <= size - 1; i++) {
 			if (i <= number) {
-				for (int j = 1; j <= (i - 1); j++) {
+				for (int j = 1; j <= (i - 1); j++)
 					System.out.print(j + " ");
-				}
 
-				for (int j = i; j <= (size - (i - 1)) - 1; j++) {
+				for (int j = i; j <= (size - (i - 1)) - 1; j++)
 					System.out.print(i + " ");
-				}
 
-				for (int j = (i - 1); j >= 1; j--) {
+				for (int j = (i - 1); j >= 1; j--)
 					System.out.print(j + " ");
-				}
+
 			} else {
 				int pass = i - number;
 
-				for (int j = 1; j <= (number - pass); j++) {
+				for (int j = 1; j <= (number - pass); j++)
 					System.out.print(j + " ");
-				}
 
-				for (int j = 1; j <= pass; j++) {
+				for (int j = 1; j <= pass; j++)
 					System.out.print((number - pass) + " ");
-				}
 
-				for (int j = 1; j < pass; j++) {
+				for (int j = 1; j < pass; j++)
 					System.out.print((number - pass) + " ");
-				}
 
-				for (int j = (number - pass); j >= 1; j--) {
+				for (int j = (number - pass); j >= 1; j--)
 					System.out.print(j + " ");
-				}
+
 			}
-
 			System.out.println();
 		}
 	}

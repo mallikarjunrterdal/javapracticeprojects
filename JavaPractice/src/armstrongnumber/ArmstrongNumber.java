@@ -1,4 +1,4 @@
-package amstrongnumber;
+package armstrongnumber;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,15 +6,19 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AmstrongNumber {
+public class ArmstrongNumber {
 
 	InputStreamReader isr = new InputStreamReader(System.in);
 	BufferedReader bufferedReader = new BufferedReader(isr);
 
 	public static void main(String args[]) {
 
-		AmstrongNumber amstrongNumber = new AmstrongNumber();
-		System.out.println(amstrongNumber.isGivenNumberAmstrong(amstrongNumber.readNumber()));
+		ArmstrongNumber armstrongNumber = new ArmstrongNumber();
+		if (armstrongNumber.isGivenNumberAmstrong(armstrongNumber.readNumber())) {
+			System.out.println("Given number is an Armstrong number");
+		} else {
+			System.out.println("Given number is not an Armstrong number");
+		}
 	}
 
 	public boolean isGivenNumberAmstrong(int number) {

@@ -14,14 +14,14 @@ public class ArmstrongNumber {
 	public static void main(String args[]) {
 
 		ArmstrongNumber armstrongNumber = new ArmstrongNumber();
-		if (armstrongNumber.isGivenNumberAmstrong(armstrongNumber.readNumber())) {
+		if (armstrongNumber.isGivenNumberArmstrong(armstrongNumber.readNumber())) {
 			System.out.println("Given number is an Armstrong number");
 		} else {
 			System.out.println("Given number is not an Armstrong number");
 		}
 	}
 
-	public boolean isGivenNumberAmstrong(int number) {
+	public boolean isGivenNumberArmstrong(int number) {
 		List<Integer> numberList = this.convertNumbertoArray(number);
 		long power = numberList.size();
 		long sum = 0;
@@ -52,7 +52,7 @@ public class ArmstrongNumber {
 	}
 
 	public int readNumber() {
-		System.out.println("Please enter a number to check if it is an Amstrong number or not : ");
+		System.out.println("Please enter a number to check if it is an Armstrong number or not : ");
 		boolean loopStatus = true;
 		String number = "";
 
@@ -60,7 +60,7 @@ public class ArmstrongNumber {
 			while (loopStatus) {
 				number = bufferedReader.readLine();
 				if (!this.isGivenNumberValid(number))
-					System.out.println("Please enter a positive number to check if it is an Amstrong number or not : ");
+					System.out.println("Please enter a positive number to check if it is an Armstrong number or not : ");
 				else
 					loopStatus = false;
 			}

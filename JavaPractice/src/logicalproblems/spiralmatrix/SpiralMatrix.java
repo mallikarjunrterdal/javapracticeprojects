@@ -39,7 +39,6 @@ public class SpiralMatrix {
 
 				for (int j = (number - pass); j >= 1; j--)
 					System.out.print(j + " ");
-
 			}
 			System.out.println();
 		}
